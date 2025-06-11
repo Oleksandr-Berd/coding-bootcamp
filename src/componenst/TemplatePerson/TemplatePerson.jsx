@@ -20,13 +20,13 @@ const TemplatePerson = ({ actualPerson, switchPerson }) => {
         </button>
       </SC.BtnThumbStyled>
       </SC.ThumbStyled>
-      <div>
+      <SC.ContentConStyled>
         <p>{content}</p>
         <div>
           <h3>{name}</h3>
           <h4>{ocupation}</h4>
         </div>
-      </div>
+      </SC.ContentConStyled>
     </SC.TemplatePersonStyled>
   );
 };

@@ -7,7 +7,7 @@ export const ThumbStyled = styled.div`
 
   display: inline-block;
 
-margin-bottom: 56px;
+  margin-bottom: 56px;
 
   padding-top: 32px;
   padding-bottom: 32px;
@@ -62,5 +62,46 @@ export const BtnThumbStyled = styled.div`
 
     border-bottom-right-radius: 28px;
     border-top-right-radius: 28px;
+  }
+`;
+
+export const ContentConStyled = styled.div`
+  position: relative;
+  color: #202047;
+  line-height: 1.3;
+
+  & > p {
+    margin-bottom: 20px;
+
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  & h3 {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  & h4 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #b9b9ce;
+  }
+
+  &::before {
+position: absolute;
+top: 0;
+left: 50%;
+
+transform: translate(-50%, -50%);
+
+    display: inline-block;
+    width: 60px;
+    height: 50px;
+
+    content: "";
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='100'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='31.368%25' x2='100%25' y1='72.917%25' y2='19.557%25'%3E%3Cstop offset='0%25' stop-color='%239975D0'/%3E%3Cstop offset='100%25' stop-color='%234A3FDB'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath fill='url(%23a)' fill-rule='evenodd' d='M52.615 0L24.858 100H0V0h52.615zM120 0L92.243 100H67.385V0H120z' opacity='.15'/%3E%3C/svg%3E");
+    background-size: contain;
   }
 `;
