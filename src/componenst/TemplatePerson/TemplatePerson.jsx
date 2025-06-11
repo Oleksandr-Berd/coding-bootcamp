@@ -1,18 +1,21 @@
 import * as SC from "./TemplatePersonStyled";
 
+import iconNext from "../../assets/images/icon-next.svg"
+import iconPrev from "../../assets/images/icon-prev.svg"
+
 const TemplatePerson = ({ actualPerson }) => {
   if (!actualPerson) return null;
   const { name, ocupation, content, image } = actualPerson;
 
   return (
     <SC.TemplatePersonStyled>
-      <div>
+      <SC.ThumbStyled>
         <img src={image} alt="picture" />
-        <div>
-          <button type="button" operation="dicrement"></button>
-          <button type="button" operation="increment"></button>
-        </div>
-      </div>
+        <SC.BtnThumbStyled>
+          <button type="button" operation="dicrement"><img src={iconPrev} alt="next" /></button>
+          <button type="button" operation="increment"><img src={iconNext} alt="prev" /></button>
+        </SC.BtnThumbStyled>
+      </SC.ThumbStyled>
       <div>
         <p>{content}</p>
         <div>
