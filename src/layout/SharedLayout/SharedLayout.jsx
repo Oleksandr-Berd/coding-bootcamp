@@ -1,26 +1,31 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import * as SC from "./SharedLayoutStyled";
-import {peopleDb} from "../../db/peopleDb";
+import { peopleDb } from "../../db/peopleDb";
 import TemplatePerson from "../../componenst/TemplatePerson/TemplatePerson";
-import { handlePerson } from "../../utils/handlers/handlePerson";
 import { switchPerson } from "../../utils/handlers/switchPerson";
 const SharedLayout = () => {
-  const [actualPerson, setActualPerson] = useState(null);
-  const [operation, setOperation] = useState(null)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    setActualPerson(handlePerson(peopleDb, operation));
-  }, [operation]);
+  const actualPerson = peopleDb[currentIndex];
 
+  const handleSwithOperation = (evt) => {
+    const operation = switchPerson(evt);
 
-const handleSwithOperation = (evt) => {
-setOperation(switchPerson(evt))
-}
-
+    setCurrentIndex((prevIndex) => {
+      if (operation === "increment") {
+        return (prevIndex + 1) % peopleDb.length;
+      } else {
+        return (prevIndex - 1 + peopleDb.length) % peopleDb.length;
+      }
+    });
+  };
 
   return (
     <SC.SharedLayoutStyled>
-      <TemplatePerson actualPerson={actualPerson} switchPerson={handleSwithOperation}/>
+      <TemplatePerson
+        actualPerson={actualPerson}
+        switchPerson={handleSwithOperation}
+      />
     </SC.SharedLayoutStyled>
   );
 };
