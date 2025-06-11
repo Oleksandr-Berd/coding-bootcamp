@@ -1,6 +1,11 @@
 import styled from "@emotion/styled";
 
-export const TemplatePersonStyled = styled.div``;
+export const TemplatePersonStyled = styled.div`
+@media (min-width: 1280px){
+    display: flex;
+    flex-direction: row-reverse;
+}
+`;
 
 export const ThumbStyled = styled.div`
   position: relative;
@@ -46,6 +51,10 @@ export const BtnThumbStyled = styled.div`
     padding-bottom: 16px;
 
     background-color: #fff;
+
+    &:hover, &:focus, &:active{
+        cursor: pointer;
+    }
   }
 
   & > button:nth-of-type(1) {
@@ -69,6 +78,11 @@ export const ContentConStyled = styled.div`
   position: relative;
   color: #202047;
   line-height: 1.3;
+
+  @media (min-width: 1280px){
+    width: 50%;
+    
+  }
 
   & > p {
     margin-bottom: 20px;
