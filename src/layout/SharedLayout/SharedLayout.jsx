@@ -1,10 +1,22 @@
-import * as SC from "./SharedLayoutStyled"
+import { useEffect, useState } from "react";
+import * as SC from "./SharedLayoutStyled";
+import {peopleDb} from "../../db/peopleDb";
+import TemplatePerson from "../../componenst/TemplatePerson/TemplatePerson";
+import { handlePerson } from "../../utils/handlers/handlePerson";
 const SharedLayout = () => {
-    return ( 
-        <SC.SharedLayoutStyled>
+  const [actualPerson, setActualPerson] = useState(null);
 
-        </SC.SharedLayoutStyled>
-     );
-}
- 
+  useEffect(() => {
+    setActualPerson(handlePerson(peopleDb));
+  }, []);
+
+
+
+  return (
+    <SC.SharedLayoutStyled>
+      <TemplatePerson actualPerson={actualPerson}/>
+    </SC.SharedLayoutStyled>
+  );
+};
+
 export default SharedLayout;
