@@ -4,6 +4,8 @@ export const TemplatePersonStyled = styled.div`
 @media (min-width: 1280px){
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
 }
 `;
 
@@ -30,6 +32,11 @@ export const ThumbStyled = styled.div`
     border-radius: 8px;
 
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+
+    @media (min-width: 1280px){
+        width: 392px;
+        height: auto;
+    }
   }
 `;
 
@@ -40,6 +47,13 @@ export const BtnThumbStyled = styled.div`
   left: 50%;
 
   transform: translate(-50%, -12px);
+
+@media (min-width: 1280px){
+left: 0;
+
+  transform: translate(72px, -12px);
+
+}
 
   & img {
     width: 12px;
@@ -80,8 +94,17 @@ export const ContentConStyled = styled.div`
   line-height: 1.3;
 
   @media (min-width: 1280px){
-    width: 50%;
+    width: 32%;
+
+    text-align: left;
+
+    transform: translate(124px, 0);
     
+    & > div{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
   }
 
   & > p {
@@ -89,11 +112,16 @@ export const ContentConStyled = styled.div`
 
     font-size: 18px;
     font-weight: 300;
+
   }
 
   & h3 {
     font-size: 15px;
     font-weight: 700;
+
+    @media (min-width: 1280px){
+        margin-right: 16px;
+    }
   }
 
   & h4 {
